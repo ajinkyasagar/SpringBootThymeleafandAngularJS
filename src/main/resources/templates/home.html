@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  
+    <head>
+        <title>Spring Security Example</title>
+        <script>
+var app = angular.module("myApp", ['ngRoute']);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "home.html"
+    })
+    .when("/red", {
+        templateUrl : "hello.html"
+    });
+    
+});
+</script>
+        
+    </head>
+    <body  ng-app="myApp">
+        <div ng-view=""></div>
+        <h1>Welcome!</h1>
+        <a href="#!red">Red</a>
+        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+    </body>
+</html>
