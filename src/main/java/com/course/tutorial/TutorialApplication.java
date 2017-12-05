@@ -12,6 +12,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.course.tutorial.Entity.Customer;
+import com.course.tutorial.Repository.CustomerRepository;
+
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @SpringBootApplication
 @EnableAutoConfiguration

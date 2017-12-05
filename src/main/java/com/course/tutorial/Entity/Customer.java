@@ -1,9 +1,11 @@
-package com.course.tutorial;
+package com.course.tutorial.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import groovy.transform.ToString;
 
 @Entity
 public class Customer {
@@ -51,7 +53,6 @@ public class Customer {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-    
-    
+
 
 }
