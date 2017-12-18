@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body ng-app="myApp"  class="ng-scope" style="" ng-controller="myCtrl">
+  
+ <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+     <li ng-repeat="x in navbars"><a href="#">{{x}}</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+     <li ng-repeat="x in navbars"><a href="#">{{x}}</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+ <ul id="slide-out" class="leftnav side-nav  "  >
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://cdn.edureka.co/blog/wp-content/uploads/2016/12/Chef-Tutorial-Edureka.png">
+      </div>
+      <a href="#!user"><img class="circle" src="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/flip.jpg"></a>
+      <a href="#!name"><span class="black-text name">Dear User</span></a>
+      <a href="#!email"><span class="black-text email">Welcome to Chef Course</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <!--Maybe a logo?-->
+        <!--<li class="logo" style="margin-left: -15px;"><a id="logo-container" href="http://materializecss.com/"class="brand-logo"><h3></h3></a></li>-->
+        <li class="bold"><a href="https://krescruz.github.io/angular-materialize/#about" class="waves-effect waves-teal">About angular-materialize</a></li>
+        <li class="bold"><a href="https://krescruz.github.io/angular-materialize/#getting-started" class="waves-effect waves-teal">Getting started</a></li>
+
+         <li class="no-padding" ng-repeat="topic in coursenav.topics">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold active"><a class="collapsible-header waves-effect waves-teal active">{{topic.name}}</a>
+                    <div class="collapsible-body" style="display: block;">
+                        <ul class="sagar">
+                            <li  ng-repeat="subtopic in topic.subtopics"  ng-class="{active:$index == selectedRow}" ng-click="changeclass($index)"><a href="" >{{subtopic.name}}</a></li>
+                          
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold active"><a class="collapsible-header waves-effect waves-teal active">Forms</a>
+                    <div class="collapsible-body" style="display: block;">
+                        <ul>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#input-field">Input-field</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#input-date">Input-date</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#input-clock">Input-clock</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#select">Material select</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#range">Range select</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a class="collapsible-header waves-effect waves-teal">JavaScript</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#carousel">Carousel</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#collapsible">Collapsible</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#chips">Chips</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#toast">Dialogs - Toast</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#tooltip">Tooltip</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#pushpin">Pushpin</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#dropdown">Dropdown</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#modals">Modals</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#parallax">Parallax</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#scrollfire">ScrollFire</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#sidenav">SideNav</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#slider">Slider</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#media">Media</a></li>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#tabs">Tabs</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a class="collapsible-header waves-effect waves-teal">Components</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="https://krescruz.github.io/angular-materialize/#pagination">Pagination</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i >TOPICS</i></a>
+      
+
+
+   <div ng-show="false">     
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Starter Template</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+      </div>
+      <div class="row center">
+        <a href="/tutor" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      
+        <div ng-repeat="view in forntpageview" class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">{{view.title}}</h5>
+
+            <p class="light">{{view.desc}}</p>
+          </div>
+        </div>
+
+       
+
+    </div>
+    <br><br>
+  </div>
+</div>
+<div  class="container" style="padding-left: 100px">
+    
+  <div class="row">
+    <div class="col s12 m6 l12 deep-orange "><p></p></div>
+
+  </div>
+  
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+              <div class="card-panel  grey lighten-5 z-depth-1 hoverable ">
+                <div class="row valign-wrapper">
+                  <div class="col s4">
+                    <img src="https://cdn.edureka.co/blog/wp-content/uploads/2016/12/Chef-Tutorial-Edureka.png" alt="" class="responsive-img z-depth-5"> <!-- notice the "circle" class -->
+                  </div>
+                  <div class="col s8">
+                    <span class="black-text center">
+                      <h5>
+                      Chef Tutorial
+                    </h5>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+<div class="row">
+    <div class="col s12 m6 l12 deep-orange "><p>{{courseContent.name}}</p></div>
+
+  </div>
+       <div>
+         <div class="row">
+
+          <div class="col s12 m9 l10">
+      <div id="{{content.title}}" class="section scrollspy" ng-repeat="content in courseContent.content ">
+         <p> 
+          <h5 class="left-align">{{content.title}}</h5>
+              
+              <blockquote ng-if="content.type=="text">
+         
+              
+               
+               <p>
+              {{content.data}}
+              </p>
+
+        </blockquote>
+
+        <img ng-if="content.type=="img" src="content.data.url">
+        <img>
+
+
+        <div ng-if="content.type=="list">
+          
+          <li ng-repeat="list in courseContent.content.data " >
+            
+            {{list}}
+          </li>
+
+        </div>
+
+           <div ng-if="content.type=="list">
+          
+          <li ng-repeat="map in courseContent.content.data " >
+            <h5>map.key </h5>
+            {{map.value}}
+          </li>
+
+        </div>
+
+        <div ng-if="content.type=="table">
+          
+<table>
+  <td ng-repeat="columns in courseContent.content.data.columns"> {{columns}}</td>
+  <tr ng-repeat="columns in courseContent.content.data.rows">
+    <td></td>
+
+  </tr>
+
+</table>
+
+          <li ng-repeat="map in courseContent.content.data " >
+            <h5>map.key </h5>
+            {{map.value}}
+          </li>
+
+        </div>
+
+
+
+        
+     </p>
+      </div>
+    <div class="col s12 m9 l10">
+      <div id="introduction" class="section scrollspy">
+         <p> 
+          <h5 class="left-align">Why Chef?</h5>
+              <blockquote>
+         
+              
+               
+               <p>
+               This tutorial has been prepared for those who want to understand the features and functionality of Chef and how Chef can help in reducing the complexity of managing an infrastructure.</br> </br>
+
+              After completing this tutorial one would have moderate level understanding of Chef and its key building blocks. It will also give a fair idea on how to configure Chef in a preconfigured infrastructure and how to use it.
+              </p>
+
+        </blockquote>
+
+        
+     </p>
+      </div>
+
+      <div id="structure" class="section scrollspy">
+       <p> 
+          <h5 class="left-align">Features of Chef</h5>
+              <blockquote>
+         
+              
+               
+               <p>
+             Following are the most prominent features of Chef −
+
+           <li> Chef uses popular Ruby language to create a domain-specific language.</li>
+
+           <li> Chef does not make assumptions on the current status of a node. It uses its mechanisms to get the current status of machine.</li>
+
+            <li>Chef is ideal for deploying and managing the cloud server, storage, and software.</li>
+              </p>
+
+        </blockquote>
+
+        
+     </p>
+      </div>
+       <p> 
+          <h5 class="left-align">Advantages of Chef</h5>
+              <blockquote>
+         
+              
+               
+               <p>
+               This tutorial has been prepared for those who want to understand the features and functionality of Chef and how Chef can help in reducing the complexity of managing an infrastructure.</br> </br>
+
+              After completing this tutorial one would have moderate level understanding of Chef and its key building blocks. It will also give a fair idea on how to configure Chef in a preconfigured infrastructure and how to use it.
+              </p>
+
+        </blockquote>
+
+        
+     </p>
+      <div id="initialization" class="section scrollspy">
+
+         <h5 class="left-align">Architecture</h5>
+        <div class="row">
+        <div class="col s12 m7 offset-m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://msdnshared.blob.core.windows.net/media/2016/06/image1212.png">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col hide-on-small-only m3 l2">
+      <ul class="section table-of-contents" style="position: fixed;">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#initialization">Intialization</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+        
+
+    <div class="row">
+        <div class="col s12 m12 l12 ">
+          <div class="card deep-orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Important Notes</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="left-align"> << Previous Topic</a>
+              <a href="#" class="right">Next Subtopic >> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+        
+            
+
+  </div>
+
+
+</div>
+
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+  
+        
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>     
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script>
+
+    $(document).ready(function(){
+    $('.collapsible').collapsible();
+
+     $('.scrollspy').scrollSpy();
+
+    $(function() {
+      $( 'ul.sagar li' ).on( 'click', function() {
+            $( this ).parent().find( 'li.active' ).removeClass( 'active' );
+            $( this ).addClass( 'active' );
+      });
+});
+  });
+    var app = angular.module("myApp", ['ngRoute',]);
+app.config(function($routeProvider) {
+  $routeProvider
+    .when("/", {
+        templateUrl : "index.html"
+    })
+    .when("/get", {
+        templateUrl : "home.html"
+    }).when("/tutor", {
+        templateUrl : "tutor.html"
+    });
+});
+app.controller('myCtrl',['$scope','$document', function($scope,$document) {
+ 
+
+
+ $scope.changeclass=function(index)
+ {
+//$scope.selectedRow = index;
+
+   $(this).addClass('active');
+   $(this).parent().addClass('active').siblings().removeClass('active') ;
+ }
+ $scope.navbars=["Java","Coherence","Excel","Spring","Hibernate","Hadoop","SQL","Eclipse","JAXB","SFTP","JMS","Advance JAVA"];
+  $scope.forntpageview=[{
+    title:"Speeds up development",
+    desc:"We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers."
+
+  },{
+     title:"User Experience Focused",
+    desc:"By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience."
+
+  },{
+     title:"Easy to work with",
+    desc:"We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize."
+  },{
+    title:"Speeds up development",
+    desc:"We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers."
+
+  },{
+     title:"User Experience Focused",
+    desc:"By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience."
+
+  },{
+     title:"Easy to work with",
+    desc:"We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize."
+  }];
+
+  $scope.coursenav={
+id:111,
+name:"Core Java",
+  topics:[
+    {
+    id:1,
+    name:"String",
+    sequence:1,
+      subtopics:[
+        {
+        id:11,
+        sequence:1,
+        name:"String"
+        },
+
+        {
+        id:12,
+         sequence:2,
+        name:"String Functions"
+        },
+
+        {
+        id:13,
+         sequence:3,
+        name:"String Immutability"
+        },
+
+        {
+        id:14,
+        sequence:4,
+        name:"String Memory Usage"
+        },
+      ]
+    },
+    {
+    id:1,
+    name:"Collections",
+    sequence:2,
+      subtopics:[
+        {
+        id:11,
+         sequence:5,
+        name:"Map"
+        },
+
+        {
+        id:12,
+         sequence:6,
+        name:"Set"
+        },
+
+        {
+        id:13,
+         sequence:7,
+        name:"HASHMAP"
+        },
+
+        {
+        id:14,
+         sequence:8,
+        name:"ARRAYLIST"
+        },
+      ]
+    },
+    {
+    id:1,
+    name:"Collections",
+      subtopics:[
+        {
+        id:11,
+        sequence:9,
+        name:"Map"
+        }
+      ]
+    }
+
+  ]
+};
+
+
+ $scope.courseContent={
+  name: "String"
+  sequence: 1,
+  content: [{
+      type: "header",
+      title: "String",
+      sequence: 1,
+      data: "Strig is importnat part in JAVA"
+
+    },
+
+    {
+      type: "img",
+      title: "String",
+      sequence: 1,
+      data = "{url:"",desc:""}",
+    },
+    {
+      type: "text",
+      title: "Spring Tutorial",
+      sequence: 1,
+      data: "This spring tutorial provides in-depth concepts of Spring Framework with simplified examples. It was developed by Rod Johnson in 2003. Spring framework makes the easy development of JavaEE application.  It is helpfulfor beginners and experienced persons.
+    },
+
+    {
+      type: "code",
+      title: "Spring Tutorial",
+      sequence: 1,
+      data: "class Employee{  
+      Address address;
+      Employee() {
+        address = new Address();
+      }
+    }
+    "
+
+  }
+]
+
+};
+
+}]);
+
+
+
+
+
+  </script>
+  
+  </body>
+</html>
