@@ -43,9 +43,6 @@ public class CustomerRestController {
 @RequestMapping(value="/add" ,method = RequestMethod.POST, consumes = "application/json")
 public Customer addCustomer(@RequestBody Customer customer )
 {
-	
-	
-	
 	try
 	{
 		System.out.println(customer);
